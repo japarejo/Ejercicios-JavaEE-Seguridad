@@ -26,7 +26,9 @@ public class Usuario implements Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    /**
+     * Obtiene el nombre del usuario de la sesión
+     */
     private void getDatosUsuario() {
         ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
         Object objPeticion = context.getRequest();
@@ -41,7 +43,9 @@ public class Usuario implements Serializable {
             logout();
         }
     }
-
+    /**
+     * Invalida la Sesión y redigiré a la página de inicio
+     */
     public void logout() {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         ec.invalidateSession();
